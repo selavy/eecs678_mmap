@@ -99,7 +99,11 @@ int main (int argc, char *argv[])
      * the memory location pointed to by dest.
      */
   //    *dst = *src;
-  memcpy( dst, src, statbuf.st_size );
+  //memcpy( dst, src, statbuf.st_size );
+  
+  for( i = 0; i < statbuf.st_size; ++i ) {
+    *dst++ = *src++;
+  }
 
   close( fdin );
   close( fdout );
