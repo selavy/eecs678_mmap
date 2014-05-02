@@ -64,7 +64,7 @@ int main (int argc, char *argv[])
   /* 
    * 2. go to the location corresponding to the last byte 
    */
-  if (lseek (fdout, statbuf.st_size, SEEK_SET) < 0) {
+  if (lseek (fdout, statbuf.st_size - 1, SEEK_SET) < 0) {
     err_sys ("lseek");
   }
 
